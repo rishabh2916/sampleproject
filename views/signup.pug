@@ -1,0 +1,50 @@
+doctype html
+head
+  title Sign Up
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(charset='utf-8')
+  link(rel='stylesheet' type='text/css' href='/css/signup_style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css')
+  script(src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossorigin='anonymous')
+.login-page
+  .form
+    form#registrationForm(method='post' onsubmit='')
+      lottie-player(src='https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json' background='transparent' speed='1' style='justify-content: center' loop='' autoplay='')
+      input#name(type='text' placeholder='full name' name='name')
+      input#email(type='text' placeholder='email address' name='email')
+      input#username(type='text' placeholder='pick a username' name='username')
+      input#password(type='password' placeholder='set a password' name='password')
+      i.fas.fa-eye(onclick='show()')
+      br
+      br
+      button(type='submit') SIGN UP
+
+script.
+  document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const username = e.target.elements.username.value;
+  const password = e.target.elements.password.value;
+   const email = e.target.elements.email.value;
+    const name = e.target.elements.name.value;
+  try {
+  const response = await fetch('api/v1/signup', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ username, password, email, name})
+  });
+  const data = await response.json();
+  console.log(data)
+  if (data.status === 'success') {
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 1500);
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
+  });

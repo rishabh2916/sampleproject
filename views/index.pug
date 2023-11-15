@@ -1,0 +1,38 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://cdn.tailwindcss.com')
+  style(src='/css/style.css')
+  title AI-PATH : Your Career Navigator
+  style.
+    body {
+    background-color: rgb(169, 179, 241);
+    }
+header.fixed.top-0.left-0.w-full.bg-white.shadow-md
+  // Your navigation bar content here
+  header.text-gray-600.body-font
+    .container.mx-auto.flex.flex-wrap.p-5.flex-col.items-center(class='md:flex-row')
+      a.flex.title-font.font-medium.items-center.text-gray-900.mb-4(class='md:mb-0')
+        svg.w-10.h-10.text-white.p-2.bg-indigo-500.rounded-full(xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewbox='0 0 24 24')
+          path(d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5')
+        a.ml-3.text-xl(href='#')
+          span.ml-3.text-xl AI-Path
+      nav.flex.flex-wrap.items-center.text-base.justify-center(class='md:ml-auto md:mr-auto')
+        a.mr-5(href='/about' class='hover:text-gray-900') About
+        a.mr-5(href='contact' class='hover:text-gray-900') Contact us
+        a.mr-5(href='/login' class='hover:text-gray-900') login
+        a.mr-5(href='/signup' class='hover:text-gray-900') signup
+      // <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login
+      svg.w-4.h-4.ml-1(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewbox='0 0 24 24')
+        path(d='M5 12h14M12 5l7 7-7 7')
+section.text-gray-600.body-font
+  .container.mx-auto.flex.px-5.py-24.items-center.justify-center.flex-col
+    img.w-full.max-w-screen-xl.mb-10.object-cover.object-center.rounded(class='lg:w-full md:w-full' alt='hero' src='ProfessionalVisiting.png')
+    .text-center.w-full(class='lg:w-2/3')
+      p.mb-8.leading-relaxed.text-xl
+        b Welcome to AI-PATH : Your Career Navigator 
+        | - your personal career guide. We&apos;re here to help you make confident, informed career choices. Our AI-powered platform offers personalized career recommendations based on your unique skills and interests. Explore career information, educational requirements and more. We&apos;re committed to ethical, unbiased guidance. Let&apos;s shape your successful future together.
+      .flex.justify-center
+        button.inline-flex.text-white.bg-indigo-500.border-0.py-2.px-6.rounded.text-lg(class='focus:outline-none hover:bg-indigo-600') Let&apos;s Start
+script(src='script.js')
